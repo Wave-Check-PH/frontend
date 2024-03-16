@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.976b206b.css",
+    "main.js": "/static/js/main.e2b9f907.js",
+    "static/js/453.82b36481.chunk.js": "/static/js/453.82b36481.chunk.js",
+    "static/media/globe.png": "/static/media/globe.151c828911b001bc5a95.png",
+    "static/media/surfmaidlogo.png": "/static/media/surfmaidlogo.6455b4f96f89ba64258a.png",
+    "static/media/hanginthere.gif": "/static/media/hanginthere.17085475e30c2436aeb1.gif",
+    "index.html": "/index.html",
+    "main.976b206b.css.map": "/static/css/main.976b206b.css.map",
+    "main.e2b9f907.js.map": "/static/js/main.e2b9f907.js.map",
+    "453.82b36481.chunk.js.map": "/static/js/453.82b36481.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.976b206b.css",
+    "static/js/main.e2b9f907.js"
+  ]
+}

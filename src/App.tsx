@@ -24,14 +24,14 @@ function App() {
           </p>
         </div>
         <div className="footnote">
-          <p>This is a super early prototype, just so people can use the Point cam na</p>
+          <p>This is a super early prototype, just so people can use the Point cam</p>
           <p>Please bear with while we try and improve</p>
-          <p>If you have any spots that you want added to this site please email</p>
+          <p>If you have any spots that you want added to this site or just have any questions, please email</p>
           <p>wavecheckph@proton.me</p>
           <br />
-          <p>Hindi pa ito tapos, ginawa lang nang itong prototype para makagamit lang yung Point cam</p>
+          <p>Hindi pa ito tapos, ginawa itong prototype para makagamit na yung Point cam</p>
           <p>Paki hintay lang habang inaayos parin</p>
-          <p>Kung may bagong spot na gusto mong idagdag, paki email nalang</p>
+          <p>Kung may bagong spot na gusto mong idagdag or may tanong lang, paki email dito pls</p>
           <p>wavecheckph@proton.me</p>
           <br />
           <img src={HangInTheGif} alt="Hang in there" width="250" />
