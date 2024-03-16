@@ -1,6 +1,6 @@
 import React from 'react';
 import VideoPlayerContainer from './components/VideoPlayerContainer';
-import HangInTheGif from "./img/hanginthere.gif"
+import HangInTheGif from "./img/hanginthere.jpg"
 import GlobeLogo from "./img/globe.png"
 
 import { ChakraProvider } from '@chakra-ui/react'
@@ -34,7 +34,7 @@ function App() {
           <p>Kung may bagong spot na gusto mong idagdag or may tanong lang, paki email dito pls</p>
           <p>wavecheckph@proton.me</p>
           <br />
-          <img src={HangInTheGif} alt="Hang in there" width="250" />
+          <img src={HangInTheGif} alt="Hang in there" />
         </div>
       </div>
 

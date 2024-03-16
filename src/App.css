@@ -1,6 +1,7 @@
 .container {
   background-color: #89c2fa;
   display: flex;
+  text-align: center;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -41,6 +42,8 @@
 }
 
 .footnote {
+  display: flex;
+  flex-direction: column;
   margin-top: 150px;
   font-size: 1.2rem;
 }
