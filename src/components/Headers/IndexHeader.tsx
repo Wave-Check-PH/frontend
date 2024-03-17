@@ -52,10 +52,10 @@ function IndexHeader() {
             <h1 className="h1-seo">Wave Check PH</h1>
             <h3>Discover the Philippines unlimited waves</h3>
           </div>
-          <h6 className="category category-absolute">
+          <strong className="category" style={{ marginTop: '500px' }}>
             Powered by{" "}
             <img src={GlobeLogo} alt="Globe Telecom Logo" width="100" />
-          </h6>
+          </strong>
         </Container>
       </div>
     </>
