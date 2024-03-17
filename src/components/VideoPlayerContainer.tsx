@@ -3,7 +3,7 @@ import VideoPlayer from './VideoPlayer'; // Assuming VideoPlayer component is de
 import { FaPlay } from "react-icons/fa";
 import SurfMaidLogo from "../img/surfmaidlogo.png";
 
-import { Icon } from '@chakra-ui/react'
+import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 
 interface VideoPlayerProps {
     src: string;
@@ -13,7 +13,7 @@ interface VideoPlayerProps {
 
 const VideoPlayerContainer: React.FC<VideoPlayerProps> = ({ src, style }) => {
     const [showVideo, setShowVideo] = useState(false);
-    const bottomBarHeight = 150;
+    const bottomBarHeight = 100;
     const windowWidth = window.innerWidth * 0.5;
     const calculatedWidth = windowWidth * 0.5625;
     const defaultStyle: React.CSSProperties = {
@@ -31,11 +31,12 @@ const VideoPlayerContainer: React.FC<VideoPlayerProps> = ({ src, style }) => {
             ) : (
                 <div onClick={handleClick} style={{ ...defaultStyle, border: '1px solid black', display: 'flex', flexDirection: 'row', justifyContent: "center", alignItems: "center" }}>
                     {/* <button onClick={handleClick}>Show Video</button> */}
-                    <Icon boxSize={windowWidth / 3} style={{}} as={FaPlay} />
+                    <h1>Press to play</h1>
+                    <PlayCircleIcon fontSize="large" />
                 </div>
             )}
             <div onClick={handleClick} style={{ width: windowWidth, height: bottomBarHeight + "px", border: '1px solid black', borderTop: 0, display: 'flex', flexDirection: 'row', justifyContent: "space-between", alignItems: "center" }}>
-                <div style={{ marginLeft: 20 }}>Hosted By</div>
+                <div style={{ marginLeft: 10 }}>Hosted By</div>
                 <img style={{ height: (bottomBarHeight - 10) + "px" }} src={SurfMaidLogo} />
             </div>
         </div>
