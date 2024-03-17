@@ -4,7 +4,6 @@ import VideoPlayerContainer from './components/VideoPlayerContainer';
 import HangInTheGif from "./img/hanginthere.jpg"
 import GlobeLogo from "./img/globe.png"
 
-import logo from './logo.svg';
 import './App.css';
 import TabsContainerPlayer from './components/TabsContainer';
 
@@ -19,11 +18,10 @@ function App() {
           <h2 className="subtitle">Powered by</h2>
           <img src={GlobeLogo} alt="Globe Telecom Logo" width="100" />
         </div>
-        <TabsContainerPlayer />
         <div className="content">
           <h3 className="content-title">La Union - Point</h3>
           <p className="content-description">
-            <VideoPlayerContainer style={{}} src='http://wavecheck.ph:8080/memfs/810e6686-8bf7-4220-a489-281992ab5421.m3u8' />
+
           </p>
         </div>
         <div className="footnote">

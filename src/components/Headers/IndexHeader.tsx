@@ -4,8 +4,6 @@ import { Container } from "reactstrap";
 import headerImage from "../../img/cloud9.jpg";
 import logoImg from "../../assets/img/now-logo.png";
 import GlobeLogo from "../../img/globe.png";
-import invisionLogo from "../../assets/img/invision-white-slim.png";
-import creativeTimLogo from "../../assets/img/creative-tim-white-slim2.png";
 
 function IndexHeader() {
   let pageHeader = useRef<HTMLDivElement>(null);
@@ -31,12 +29,26 @@ function IndexHeader() {
       <div className="page-header clear-filter" filter-color="blue">
         <div
           className="page-header-image"
-          style={{ backgroundImage: `url(${headerImage})` }}
+          style={{
+
+            backgroundImage: `url(${headerImage})`
+          }}
           ref={pageHeader}
-        ></div>
+        >
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adjust opacity here (0.5 is 50%)
+            }}
+          ></div>
+        </div>
         <Container>
           <div className="content-center brand">
-            <img alt="..." className="n-logo" src={logoImg}></img>
+            {/* <img alt="..." className="n-logo" src={logoImg}></img> */}
             <h1 className="h1-seo">Wave Check PH</h1>
             <h3>Discover the Philippines unlimited waves</h3>
           </div>

@@ -11,12 +11,13 @@ import "../../assets/demo/nucleo-icons-page-styles.css?v=1.5.0";
 import NavBarMain from "../NavbarMain";
 import IndexHeader from "../Headers/IndexHeader";
 import DarkFooter from "../Footers/DarkFooter";
-import Images from "./Images";
+import LandingContent from "./LandingContent";
 
 import HangInTheGif from "./img/hanginthere.jpg"
 import GlobeLogo from "./img/globe.png"
 
 import logo from './logo.svg';
+import InProgress from './InProgress';
 
 
 function LandingSection() {
@@ -38,10 +39,10 @@ function LandingSection() {
             <div className="wrapper">
                 <IndexHeader />
                 <div className="main">
-                    <Images />
-                    {/* <Images />
-          <BasicElements /> */}
+                    <LandingContent />
+                    <InProgress />
                 </div>
+
                 <DarkFooter />
             </div>
         </>

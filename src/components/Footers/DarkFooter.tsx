@@ -1,59 +1,16 @@
 /*eslint-disable*/
 import React from "react";
+import BagongPilipinasLogo from "../../img/bagongPilipinas.png"
 
 // reactstrap components
 import { Container } from "reactstrap";
 
 function DarkFooter() {
   return (
-    <footer className="footer" data-background-color="black">
-      <Container>
-        <nav>
-          <ul>
-            <li>
-              <a
-                href="https://www.creative-tim.com?ref=nukr-dark-footer"
-                target="_blank"
-              >
-                Creative Tim
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://presentation.creative-tim.com?ref=nukr-dark-footer"
-                target="_blank"
-              >
-                About Us
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://blog.creative-tim.com?ref=nukr-dark-footer"
-                target="_blank"
-              >
-                Blog
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div className="copyright" id="copyright">
-          © {new Date().getFullYear()}, Designed by{" "}
-          <a
-            href="https://www.invisionapp.com?ref=nukr-dark-footer"
-            target="_blank"
-          >
-            Invision
-          </a>
-          . Coded by{" "}
-          <a
-            href="https://www.creative-tim.com?ref=nukr-dark-footer"
-            target="_blank"
-          >
-            Creative Tim
-          </a>
-          .
-        </div>
-      </Container>
+    <footer>
+      <div style={{ marginTop: "200px", width: "100%", display: 'flex', justifyContent: "start", flexDirection: 'row' }}>
+        <img style={{ height: "80px" }} src={BagongPilipinasLogo} alt="Bagong Pilipinas" />
+      </div>
     </footer>
   );
 }
