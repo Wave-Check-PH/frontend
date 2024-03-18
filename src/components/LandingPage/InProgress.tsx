@@ -1,8 +1,5 @@
 import React from 'react';
 
-import HangInTheGif from "../../img/hanginthere.jpg"
-import GlobeLogo from "../../img/globe.png"
-
 function InProgress() {
     return (
 
@@ -21,7 +18,6 @@ function InProgress() {
                 <p>Kung may spot na gusto mong ipa-dagdag,tulong sa design nang website or may mga Katanungan, paki email sa </p>
                 <p>wavecheckph@proton.me</p>
                 <br />
-                <img style={{ objectFit: 'contain', height: "400px", marginBottom: "500px" }} src={HangInTheGif} alt="Hang in there" />
             </div>
         </div>
 

@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import VideoPlayer from './VideoPlayer'; // Assuming VideoPlayer component is defined in VideoPlayer.js
 import "./VideoPlayerContainer.scss";
-import { FaPlay } from "react-icons/fa";
-import SurfMaidLogo from "../img/surfmaidlogo.png";
 import Cam from "../interfaces/Cam";
+import HangInTherePhoto from "../img/hanginthere.jpg";
 
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import { Card, useTheme } from '@mui/material';
@@ -48,9 +47,11 @@ const VideoPlayerContainer: React.FC<VideoPlayerProps> = ({ cam }) => {
         <Card className='video-card'>
             <div >
                 {
-                    cam.comingSoon ? <div style={{ ...defaultStyle, marginBottom: 136 }}>
-                        <p>Coming soon</p>
-                    </div> :
+                    cam.comingSoon ?
+                        <div className='coming-soon' style={{ ...defaultStyle, marginBottom: 116 }}>
+                            <p>Coming soon</p>
+                            <img src={HangInTherePhoto} alt="Hang in there" style={{ height: calculatedHeight + 20, objectFit: "fill" }} />
+                        </div> :
                         <>
                             {showVideo ? (
                                 <>
@@ -64,7 +65,7 @@ const VideoPlayerContainer: React.FC<VideoPlayerProps> = ({ cam }) => {
                             )}
                             <div onClick={handleClick} className="host-section">
                                 <div style={{ marginLeft: 10 }}><h4>Hosted By</h4></div>
-                                <a className='host-tag' href={cam.hostWebsite}><img style={{ height: (bottomBarHeight - 10) + "px" }} src={cam.hostLogo} /></a>
+                                <a className='host-tag' href={cam.hostWebsite}><img alt="host logo" style={{ height: (bottomBarHeight - 10) + "px" }} src={cam.hostLogo} /></a>
                             </div>
                         </>
                 }

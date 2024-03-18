@@ -1,14 +1,10 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import "./TabsContainer.scss";
-import Hls from 'hls.js';
 
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
 import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
 import SurfTown from '../interfaces/SurfTown';
 import VideoPlayerContainer from './VideoPlayerContainer';
 import { Button } from '@mui/material';
@@ -35,7 +31,7 @@ const TabsContainerPlayer: React.FC<TabsContainerPlayerProps> = ({ locations }) 
         </div>
         <h2>{currentSurfTown.name} Cams</h2>
         <TabContext value={value}>
-            <AppBar className="app-bar" position="static" sx={{ bgcolor: 'darkblue' }}>
+            <AppBar className="app-bar" position="static" color='primary'>
                 <Tabs
                     value={value}
                     onChange={handleChange}

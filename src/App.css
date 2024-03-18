@@ -41,6 +41,7 @@
 }
 
 .footnote {
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   font-size: 1.2rem;

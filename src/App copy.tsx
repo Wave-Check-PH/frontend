@@ -34,8 +34,6 @@ function App() {
           <p>Paki hintay lang habang inaayos parin</p>
           <p>Kung may spot na gusto mong ipa-dagdag, tulong sa design nang website or may mga Katanungan, paki email sa </p>
           <p>wavecheckph@proton.me</p>
-          <br />
-          <img src={HangInTheGif} alt="Hang in there" />
         </div>
       </div>
 

@@ -7,15 +7,8 @@ import "../../assets/demo/demo.css?v=1.5.0";
 import "../../assets/demo/nucleo-icons-page-styles.css?v=1.5.0";
 
 // core components
-import NavBarMain from "../NavbarMain";
 import IndexHeader from "../Headers/IndexHeader";
-import DarkFooter from "../Footers/DarkFooter";
 import LandingContent from "./LandingContent";
-
-import HangInTheGif from "./img/hanginthere.jpg"
-import GlobeLogo from "./img/globe.png"
-
-import logo from './logo.svg';
 import InProgress from './InProgress';
 
 
@@ -34,7 +27,6 @@ function LandingSection() {
     });
     return (
         <>
-            <NavBarMain />
             <div className="wrapper">
                 <IndexHeader />
                 <div className="main">
@@ -42,7 +34,6 @@ function LandingSection() {
                     <InProgress />
                 </div>
 
-                <DarkFooter />
             </div>
         </>
 
