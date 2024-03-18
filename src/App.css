@@ -40,6 +40,10 @@
   transition: background-color 0.3s;
 }
 
+.navbar-spacer {
+  margin-top: 64px;
+}
+
 .footnote {
   margin-top: 40px;
   display: flex;

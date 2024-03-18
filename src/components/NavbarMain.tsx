@@ -14,17 +14,13 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import NavItem from '../interfaces/NavItem';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
     window?: () => Window;
 }
 
 const drawerWidth = 240;
-// const navItems = ['Home', 'About', 'Contact'];
 
 const navItems: NavItem[] = [{
     text: 'Home',
@@ -41,6 +37,10 @@ const navItems: NavItem[] = [{
 export default function DrawerAppBar(props: Props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const navigate = useNavigate();
+
+
+    const handleOnLinkClick = (link: string) => navigate(link);
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
@@ -89,7 +89,7 @@ export default function DrawerAppBar(props: Props) {
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
-                            <Button key={item.path} sx={{ color: '#fff' }}>
+                            <Button onClick={() => { navigate(item.path) }} key={item.path} sx={{ color: '#fff' }}>
                                 {item.text}
                             </Button>
                         ))}
@@ -103,7 +103,7 @@ export default function DrawerAppBar(props: Props) {
                     open={mobileOpen}
                     onClose={handleDrawerToggle}
                     ModalProps={{
-                        keepMounted: true, // Better open performance on mobile.
+                        keepMounted: true
                     }}
                     sx={{
                         display: { xs: 'block', sm: 'none' },
