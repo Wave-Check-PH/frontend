@@ -6,8 +6,15 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-# Run npm build
+# Run npm build and check its exit status
 npm run build
+build_status=$?
+
+# Check if build was successful
+if [ $build_status -ne 0 ]; then
+    echo "Error: Build unsuccessful. Exiting."
+    exit $build_status
+fi
 
 # Add all changes to the git staging area
 git add --all
