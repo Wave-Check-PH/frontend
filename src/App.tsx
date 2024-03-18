@@ -16,7 +16,7 @@ import TabsContainerPlayer from './components/TabsContainer';
 
 function App() {
   return (
-    <><LandingSection /></>
+    <LandingSection />
 
   );
 }

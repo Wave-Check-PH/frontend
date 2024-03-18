@@ -6,7 +6,7 @@ import SurfMaidLogo from "../img/surfmaidlogo.png";
 import Cam from "../interfaces/Cam";
 
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
-import { Card, CardContent } from '@mui/material';
+import { Card, useTheme } from '@mui/material';
 
 interface VideoPlayerProps {
     cam: Cam;
@@ -33,6 +33,8 @@ const VideoPlayerContainer: React.FC<VideoPlayerProps> = ({ cam }) => {
 
     const calculatedHeight = windowWidth * 0.5625;
 
+    const theme = useTheme();
+
     const defaultStyle: React.CSSProperties = {
         width: windowWidth,
         height: calculatedHeight,
@@ -55,8 +57,8 @@ const VideoPlayerContainer: React.FC<VideoPlayerProps> = ({ cam }) => {
                                     <VideoPlayer style={defaultStyle} src={cam.src} />
                                 </>
                             ) : (
-                                <div onClick={handleClick} className="prevideo-window" style={defaultStyle}>
-                                    <h1>Press to play</h1>
+                                <div style={{ ...defaultStyle, backgroundColor: theme.palette.secondary.main }} onClick={handleClick} className="prevideo-window">
+                                    <h4>Press to play</h4>
                                     <PlayCircleIcon fontSize="large" />
                                 </div>
                             )}

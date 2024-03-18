@@ -33,7 +33,7 @@ const TabsContainerPlayer: React.FC<TabsContainerPlayerProps> = ({ locations }) 
                 <Button className="surftown-button" key={index} variant={surftownIndex === index ? "contained" : "outlined"} onClick={() => setSurftownIndex(index)}>{location.name}</Button>
             )}
         </div>
-        <p>{currentSurfTown.name}</p>
+        <h2>{currentSurfTown.name} Cams</h2>
         <TabContext value={value}>
             <AppBar className="app-bar" position="static" sx={{ bgcolor: 'darkblue' }}>
                 <Tabs

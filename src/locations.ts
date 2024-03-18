@@ -23,6 +23,20 @@ const locations: SurfTown[] = [{
             hostLogo: SurfMaidLogo,
             hostWebsite: "https://surfmaid.wixsite.com/surfmaid",
             comingSoon: true
+        },
+        {
+            name: "Flotsam & Jetsam 🚧",
+            src: "",
+            hostLogo: SurfMaidLogo,
+            hostWebsite: "",
+            comingSoon: true
+        },
+        {
+            name: "Clean Beach 🚧",
+            src: "",
+            hostLogo: SurfMaidLogo,
+            hostWebsite: "",
+            comingSoon: true
         }
     ],
 }, {
