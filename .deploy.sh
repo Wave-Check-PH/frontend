@@ -15,7 +15,7 @@ if [ $build_status -ne 0 ]; then
     echo "Error: Build unsuccessful. Exiting."
     exit $build_status
 fi
-
+echo "Build successful. Proceeding."
 # Add all changes to the git staging area
 git add --all
 

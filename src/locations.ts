@@ -39,7 +39,8 @@ const locations: SurfTown[] = [{
             comingSoon: true
         }
     ],
-}, {
+},
+{
     name: "Baler 🚧",
     cams: [
         {
@@ -57,7 +58,20 @@ const locations: SurfTown[] = [{
             comingSoon: true
         }
     ],
-}, {
+},
+{
+    name: "Zamables 🚧",
+    cams: [
+        {
+            name: "Magic Left",
+            src: "",
+            hostLogo: SurfMaidLogo,
+            hostWebsite: "",
+            comingSoon: true
+        }
+    ],
+},
+{
     name: "Siargao 🚧",
     cams: [
         {
