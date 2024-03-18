@@ -1,5 +1,4 @@
 import React from 'react';
-import VideoPlayerContainer from '../VideoPlayerContainer';
 
 // styles for this kit
 import "../../assets/css/bootstrap.min.css";

@@ -1,5 +1,4 @@
 import React from 'react';
-import VideoPlayerContainer from './components/VideoPlayerContainer';
 
 import HangInTheGif from "./img/hanginthere.jpg"
 import GlobeLogo from "./img/globe.png"

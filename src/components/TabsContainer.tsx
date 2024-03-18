@@ -11,6 +11,7 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import SurfTown from '../interfaces/SurfTown';
 import VideoPlayerContainer from './VideoPlayerContainer';
+import { Button } from '@mui/material';
 
 
 interface TabsContainerPlayerProps {
@@ -27,6 +28,11 @@ const TabsContainerPlayer: React.FC<TabsContainerPlayerProps> = ({ locations }) 
 
     const currentSurfTown = locations[surftownIndex];
     return <div className='tab-window'>
+        <div className="tab-content">
+            {locations.map((location, index) =>
+                <Button className="surftown-button" key={index} variant={surftownIndex === index ? "contained" : "outlined"} onClick={() => setSurftownIndex(index)}>{location.name}</Button>
+            )}
+        </div>
         <p>{currentSurfTown.name}</p>
         <TabContext value={value}>
             <AppBar className="app-bar" position="static" sx={{ bgcolor: 'darkblue' }}>
@@ -46,6 +52,7 @@ const TabsContainerPlayer: React.FC<TabsContainerPlayerProps> = ({ locations }) 
             <VideoPlayerContainer
                 cam={currentSurfTown.cams[parseInt(value)]} />
         </TabContext>
+
     </div>
 };
 
