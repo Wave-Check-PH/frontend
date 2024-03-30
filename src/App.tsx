@@ -6,7 +6,7 @@ import DarkFooter from "./components/Footers/DarkFooter";
 
 import NavBarMain from "./components/NavbarMain";
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import HistoryPage from './pages/HistoryPage';
 import AboutPage from './pages/AboutPage';
 
