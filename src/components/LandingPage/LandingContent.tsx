@@ -10,7 +10,7 @@ function LandingContent() {
     return (
 
         <div className="landing-content">
-            <Text variant="h2">Our Available Cams</Text>
+            <Text style={{ margin: '60px' }} variant="h2">Surf Cam's</Text>
             <TabsContainerPlayer locations={locations} />
         </div>
     );

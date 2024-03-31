@@ -8,7 +8,7 @@ const locations: SurfTown[] = [{
             name: "Point",
             src: "http://34.126.109.96:8080/memfs/75bb22e6-9861-4bc9-8978-f84a75bcc51c.m3u8",
             hostLogo: SurfMaidLogo,
-            image: SurfMaidLogo,
+            image: "http://34.126.109.96:8080/memfs/75bb22e6-9861-4bc9-8978-f84a75bcc51c.jpg",
             hostWebsite: "https://surfmaid.wixsite.com/surfmaid"
         },
         {

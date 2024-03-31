@@ -42,6 +42,8 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, style }) => {
 
     return (
         <video
+        muted={true}
+        autoPlay={true}
             ref={videoRef}
             controls
             style={style}

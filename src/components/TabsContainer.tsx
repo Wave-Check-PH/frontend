@@ -6,8 +6,8 @@ import Tabs from '@mui/material/Tabs';
 import AppBar from '@mui/material/AppBar';
 import SurfTown from '../interfaces/SurfTown';
 import VideoPlayerContainer from './VideoPlayerContainer';
-import { Typography } from '@mui/material';
 import CustomCarousel from "./LandingPage/Carousel";
+import FadeIn from './atoms/FadeIn';
 
 interface TabsContainerPlayerProps {
     locations: SurfTown[];
@@ -16,6 +16,7 @@ interface TabsContainerPlayerProps {
 const TabsContainerPlayer: React.FC<TabsContainerPlayerProps> = ({ locations }) => {
     const [surftownIndex, setSurftownIndex] = React.useState(0);
     const [camIndex, setCamIndex] = React.useState("0");
+    const [drawerOpen, setDrawerOpen] = React.useState(false);
 
     const handleChange = (event: React.SyntheticEvent, newValue: string) => {
         setSurftownIndex(parseInt(newValue));
@@ -38,11 +39,11 @@ const TabsContainerPlayer: React.FC<TabsContainerPlayerProps> = ({ locations }) 
                 })}
             </Tabs>
         </AppBar>
-        <CustomCarousel locations={locations} surftownIndex={surftownIndex} setCamIndex={setCamIndex} />
-        {/* <CustomCarousel locations={locations} surftownIndex={surftownIndex} setCamIndex={setCamIndex} /> */}
+        <CustomCarousel
+            setDrawerOpen={setDrawerOpen}
+            locations={locations} surftownIndex={surftownIndex} setCamIndex={setCamIndex} />
+        <FadeIn open={drawerOpen} child={<VideoPlayerContainer cam={currentSurfTown.cams[parseInt(camIndex)]} />} />
 
-        <VideoPlayerContainer
-            cam={currentSurfTown.cams[parseInt(camIndex)]} />
 
     </div>
 };

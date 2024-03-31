@@ -11,10 +11,10 @@ interface CustomCarouselProps {
     locations: SurfTown[];
     setCamIndex: (index: string) => void;
     surftownIndex: number;
+    setDrawerOpen: (open: boolean) => void;
 }
-const CustomCarousel: React.FC<CustomCarouselProps> = ({ locations, setCamIndex, surftownIndex }) => {
+const CustomCarousel: React.FC<CustomCarouselProps> = ({ locations, setCamIndex, surftownIndex, setDrawerOpen }) => {
     const [slidesPerView, setSlidesPerView] = useState(4);
-
     useEffect(() => {
         const handleResize = () => {
             const screenWidth = window.innerWidth * 0.95;
@@ -30,30 +30,41 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({ locations, setCamIndex,
         };
     }, []);
 
+    const onCamClick = (index: number) => {
+        setDrawerOpen(true);
+        setCamIndex(index.toString());
+        const element = document.getElementById('surf-cam-player');
+        element?.scrollIntoView({
+            behavior: 'smooth',
+            // block: "start",
+            block:"start"
+        }); 
+    };
+
     const items = locations[surftownIndex].cams.map((cam, index) => (
         <div
             key={index}
             style={{ width: "256px", backgroundImage: `url(${cam.image})` }}
             className="carousel-item"
-            onClick={() => setCamIndex(index.toString())}
+            onClick={() => onCamClick(index)}
         >
-            <p style={{ position: 'absolute' }} className="legend">
+            <p style={{ position: 'absolute', top:160, backgroundColor: "rgba(0,0,0,0.3)", width: "100%",textAlign: "center" }} className="legend">
                 {cam.name}
             </p>
-            <div className="coming-soon-container">
                 {cam.comingSoon ? (
+            <div className="coming-soon-container">
                     <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect opacity="0.5" width="44" height="44" rx="22" fill="white" />
-                        <path fill="white" d="M20 15L28 22L20 29V15Z" />
-                        <line x1="10" y1="34" x2="34" y2="10" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                        <rect opacity="0.6" width="44" height="44" rx="22" fill="grey" />
+                        <path fill="grey" d="M20 15L28 22L20 29V15Z" />
+                        <line x1="10" y1="34" x2="34" y2="10" stroke="grey" strokeWidth="2" strokeLinecap="round" />
                     </svg>
-                ) : (
-                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect opacity="0.5" width="44" height="44" rx="22" fill="white" />
-                        <path fill="white" d="M20 15L28 22L20 29V15Z" />
-                    </svg>
-                )}
             </div>
+                ) : (
+                    <div className="play-surf-cam-container"><svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect opacity="0.6" width="44" height="44" rx="22" fill="grey" />
+                        <path fill="grey" d="M20 15L28 22L20 29V15Z" />
+                    </svg></div>
+                )}
         </div>
     ));
 
@@ -63,14 +74,16 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({ locations, setCamIndex,
                 spaceBetween={50}
                 slidesPerView={slidesPerView}
                 pagination={{ clickable: true }}
-                onSlideChange={() => console.log('slide change')}
                 // @ts-ignore
                 onSwiper={(swiper) => console.log(swiper)}
             >
                 {items.map((item) => (
                     <SwiperSlide>{item}</SwiperSlide>
                 ))}
+
+                <div id="surf-cam-player" />
             </Swiper>
+
         </div>
     );
 };

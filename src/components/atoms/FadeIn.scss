@@ -1,0 +1,15 @@
+.collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.collapse.show {
+    max-height: 1000px;
+    transition: max-height 0.5s ease-in;
+}
+
+.collapse-content {
+    padding: 10px;
+    background-color: #f5f5f5;
+}
