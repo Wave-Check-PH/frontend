@@ -25,7 +25,7 @@
     max-height: 650px;
     padding: 0;
     color: $white-color;
-    position: relative;
+    position: static;
     overflow: hidden;
 
     &>.content {

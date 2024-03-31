@@ -9,11 +9,14 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import HistoryPage from './pages/HistoryPage';
 import AboutPage from './pages/AboutPage';
+import customTheme from './theme';
+import { ThemeProvider } from '@mui/material/styles';
+
 
 
 function App() {
   return (
-    <>
+    <ThemeProvider theme={customTheme}>
       <NavBarMain />
       <div className='navbar-spacer' />
       <Routes>
@@ -23,7 +26,7 @@ function App() {
       </Routes>
 
       <DarkFooter />
-    </>
+    </ThemeProvider>
 
 
   );

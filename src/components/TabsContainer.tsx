@@ -5,6 +5,7 @@ import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import AppBar from '@mui/material/AppBar';
 import TabContext from '@mui/lab/TabContext';
+import Text from '@mui/material/Typography';
 import SurfTown from '../interfaces/SurfTown';
 import VideoPlayerContainer from './VideoPlayerContainer';
 import { Button } from '@mui/material';
@@ -29,7 +30,7 @@ const TabsContainerPlayer: React.FC<TabsContainerPlayerProps> = ({ locations }) 
                 <Button className="surftown-button" key={index} variant={surftownIndex === index ? "contained" : "outlined"} onClick={() => setSurftownIndex(index)}>{location.name}</Button>
             )}
         </div>
-        <h2>{currentSurfTown.name} Cams</h2>
+        <Text >{currentSurfTown.name} Cams</Text>
         <TabContext value={value}>
             <AppBar className="app-bar" position="static" color='primary'>
                 <Tabs

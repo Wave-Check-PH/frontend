@@ -10,9 +10,11 @@ import "../../assets/demo/nucleo-icons-page-styles.css?v=1.5.0";
 import IndexHeader from "../Headers/IndexHeader";
 import LandingContent from "./LandingContent";
 import InProgress from './InProgress';
+import { useTheme } from '@mui/material/styles';
 
 
 function LandingSection() {
+    const theme = useTheme();
 
     React.useEffect(() => {
         document.body.classList.add("index-page");
@@ -29,7 +31,7 @@ function LandingSection() {
         <>
             <div className="wrapper">
                 <IndexHeader />
-                <div className="main">
+                <div style={{ backgroundColor: theme.palette.background.default }} className="main">
                     <LandingContent />
                     <InProgress />
                 </div>
