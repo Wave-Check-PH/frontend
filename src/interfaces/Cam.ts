@@ -4,6 +4,7 @@ type Cam = {
     hostLogo: string;
     hostWebsite: string;
     comingSoon?: boolean;
+    image?: string;
 };
 
 export default Cam;

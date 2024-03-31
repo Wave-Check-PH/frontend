@@ -4,12 +4,10 @@ import "./TabsContainer.scss";
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import AppBar from '@mui/material/AppBar';
-import TabContext from '@mui/lab/TabContext';
-import Text from '@mui/material/Typography';
 import SurfTown from '../interfaces/SurfTown';
 import VideoPlayerContainer from './VideoPlayerContainer';
-import { Button } from '@mui/material';
-
+import { Typography } from '@mui/material';
+import CustomCarousel from "./LandingPage/Carousel";
 
 interface TabsContainerPlayerProps {
     locations: SurfTown[];
@@ -17,38 +15,34 @@ interface TabsContainerPlayerProps {
 
 const TabsContainerPlayer: React.FC<TabsContainerPlayerProps> = ({ locations }) => {
     const [surftownIndex, setSurftownIndex] = React.useState(0);
-    const [value, setValue] = React.useState("0");
+    const [camIndex, setCamIndex] = React.useState("0");
 
     const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-        setValue(newValue);
+        setSurftownIndex(parseInt(newValue));
     };
 
     const currentSurfTown = locations[surftownIndex];
     return <div className='tab-window'>
-        <div className="tab-content">
-            {locations.map((location, index) =>
-                <Button className="surftown-button" key={index} variant={surftownIndex === index ? "contained" : "outlined"} onClick={() => setSurftownIndex(index)}>{location.name}</Button>
-            )}
-        </div>
-        <Text >{currentSurfTown.name} Cams</Text>
-        <TabContext value={value}>
-            <AppBar className="app-bar" position="static" color='primary'>
-                <Tabs
-                    value={value}
-                    onChange={handleChange}
-                    textColor="inherit"
-                    variant="scrollable"
-                    scrollButtons="auto"
-                    aria-label="full width tabs example"
-                >
-                    {currentSurfTown.cams.map((cam, index) => {
-                        return <Tab label={cam.name} value={index.toString()} />
-                    })}
-                </Tabs>
-            </AppBar>
-            <VideoPlayerContainer
-                cam={currentSurfTown.cams[parseInt(value)]} />
-        </TabContext>
+
+        <AppBar className="app-bar" position="static" color='primary'>
+            <Tabs
+                value={surftownIndex.toString()}
+                onChange={handleChange}
+                textColor="inherit"
+                variant="scrollable"
+                scrollButtons="auto"
+                aria-label="full width tabs example"
+            >
+                {locations.map((cam, index) => {
+                    return <Tab label={cam.name} value={index.toString()} />
+                })}
+            </Tabs>
+        </AppBar>
+        <CustomCarousel locations={locations} surftownIndex={surftownIndex} setCamIndex={setCamIndex} />
+        {/* <CustomCarousel locations={locations} surftownIndex={surftownIndex} setCamIndex={setCamIndex} /> */}
+
+        <VideoPlayerContainer
+            cam={currentSurfTown.cams[parseInt(camIndex)]} />
 
     </div>
 };

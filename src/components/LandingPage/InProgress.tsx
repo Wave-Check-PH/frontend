@@ -7,7 +7,7 @@ function InProgress() {
         <div className="container">
             <div className="footnote">
                 <p>This is a super early prototype, just so people can use the Point cam.
-                    Please be patient, we're still building this thing</p>
+                    Please be patient, we&aposre still building this thing</p>
                 <p>If you have any spots that you want added to this site or just have any questions, please email</p>
                 <p>If you want to add any spots, help with the design of the website or have any questions, please email below</p>
                 <p>wavecheckph@proton.me</p>

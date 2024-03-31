@@ -40,7 +40,7 @@ export default function DrawerAppBar(props: Props) {
     const navigate = useNavigate();
 
 
-    const handleOnLinkClick = (link: string) => navigate(link);
+    // const handleOnLinkClick = (link: string) => navigate(link);
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);

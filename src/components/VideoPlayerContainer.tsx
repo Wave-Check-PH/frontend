@@ -58,14 +58,20 @@ const VideoPlayerContainer: React.FC<VideoPlayerProps> = ({ cam }) => {
                                     <VideoPlayer style={defaultStyle} src={cam.src} />
                                 </>
                             ) : (
-                                <div style={{ ...defaultStyle, backgroundColor: theme.palette.secondary.main }} onClick={handleClick} className="prevideo-window">
+                                <div style={{ ...defaultStyle, backgroundColor: theme.palette.secondary.main }}
+                                    onClick={handleClick}
+                                    className="prevideo-window">
                                     <h4>Press to play</h4>
                                     <PlayCircleIcon fontSize="large" />
                                 </div>
                             )}
                             <div onClick={handleClick} className="host-section">
-                                <div style={{ marginLeft: 10 }}><h4>Hosted By</h4></div>
-                                <a className='host-tag' href={cam.hostWebsite}><img alt="host logo" style={{ height: (bottomBarHeight - 10) + "px" }} src={cam.hostLogo} /></a>
+                                <div style={{ marginLeft: 10 }}>
+                                    <h4>Hosted By</h4>
+                                </div>
+                                <a className='host-tag' href={cam.hostWebsite}>
+                                    <img alt="host logo" style={{ height: (bottomBarHeight - 10) + "px" }} src={cam.hostLogo} />
+                                </a>
                             </div>
                         </>
                 }
