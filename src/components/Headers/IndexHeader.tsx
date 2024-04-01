@@ -47,21 +47,27 @@ function IndexHeader() {
             }}
           ></div>
         </div>
-        <div style={{display:'flex',flexDirection:"column", justifyContent: "center", alignItems: "center", height: '100vh'
-      }}>
-          <div className="content-center brand">
-            {/* <img alt="..." className="n-logo" src={logoImg}></img> */}
-            <h1 className="h1-seo">Wave Check PH</h1>
-            <h3>Discover the Philippines unlimited waves</h3>
-          </div>
-          <strong className="category" style={{ marginTop: '45vh' }}>
-            Powered by{" "}
-            <img src={GlobeLogo} alt="Globe Telecom Logo" width="100" />
-          </strong>
-            <KeyboardArrowDownIcon 
-              style={{marginTop: '30px', fontSize: '3rem', color: 'white'}}
-            />
-        </div>
+        <div style={{ display:'flex', flexDirection:"column", justifyContent: "center", alignItems: "center", height: '90vh', position: 'relative' }}>
+  <div className="content-center brand">
+    {/* <img alt="..." className="n-logo" src={logoImg}></img> */}
+    <h1 className="h1-seo">Wave Check PH</h1>
+    <h3>Discover the Philippines unlimited waves</h3>
+  </div>
+  <strong className="category" style={{ marginTop: '45vh' }}>
+    Powered by{" "}
+    <img src={GlobeLogo} alt="Globe Telecom Logo" width="100" />
+  </strong>
+  <KeyboardArrowDownIcon
+    style={{
+      fontSize: '3rem',
+      color: 'white',
+      position: 'absolute',
+      bottom: '20px',
+      left: '50%',
+      transform: 'translateX(-50%)',
+    }}
+  />
+</div>
       </div>
     </>
   );

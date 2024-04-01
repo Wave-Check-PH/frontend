@@ -41,9 +41,5 @@
 }
 
 .navbar-spacer {
-  margin-top: 64px;
-}
-
-.body {
-  overscroll-behavior: none;
+  margin-top: 56px;
 }

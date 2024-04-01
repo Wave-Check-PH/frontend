@@ -29,7 +29,7 @@ const navItems: NavItem[] = [{
     text: 'History',
     path: '/history'
 }, {
-    text: 'about',
+    text: 'About',
     path: '/about'
 }];
 
@@ -40,7 +40,7 @@ export default function DrawerAppBar(props: Props) {
     const navigate = useNavigate();
 
 
-    // const handleOnLinkClick = (link: string) => navigate(link);
+    const handleOnLinkClick = (link: string) => navigate(link);
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
@@ -54,7 +54,7 @@ export default function DrawerAppBar(props: Props) {
             <Divider />
             <List>
                 {navItems.map((item) => (
-                    <ListItem key={item.path} disablePadding>
+                    <ListItem onClick={() => handleOnLinkClick(item.path)} key={item.path} disablePadding>
                         <ListItemButton sx={{ textAlign: 'center' }}>
                             <ListItemText primary={item.text} />
                         </ListItemButton>
