@@ -8,6 +8,7 @@ import SurfTown from '../../interfaces/SurfTown';
 import VideoPlayerContainer from '../VideoPlayerContainer';
 import CustomCarousel from "./Carousel";
 import FadeIn from '../atoms/FadeIn';
+import { Card, useTheme } from '@mui/material';
 
 interface TabsContainerPlayerProps {
     locations: SurfTown[];
@@ -18,14 +19,18 @@ const TabsContainerPlayer: React.FC<TabsContainerPlayerProps> = ({ locations }) 
     const [camIndex, setCamIndex] = React.useState("0");
     const [drawerOpen, setDrawerOpen] = React.useState(false);
 
+    const theme = useTheme();
+
     const handleChange = (event: React.SyntheticEvent, newValue: string) => {
         setSurftownIndex(parseInt(newValue));
     };
 
     const currentSurfTown = locations[surftownIndex];
+
     return <div className='tab-window'>
 
-        <AppBar className="app-bar" position="static" color='primary'>
+        <Card className='tab-section'>
+            <AppBar className="app-bar" position="static" color='primary'>
             <Tabs
                 value={surftownIndex.toString()}
                 onChange={handleChange}
@@ -42,6 +47,7 @@ const TabsContainerPlayer: React.FC<TabsContainerPlayerProps> = ({ locations }) 
         <CustomCarousel
             setDrawerOpen={setDrawerOpen}
             locations={locations} surftownIndex={surftownIndex} setCamIndex={setCamIndex} />
+        </Card>
         <div id="surf-cam-player" style={{ marginBottom: "100px" }}>{' '}</div>
         <FadeIn
         open={drawerOpen} 
