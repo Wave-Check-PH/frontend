@@ -4,7 +4,7 @@ import "./VideoPlayerContainer.scss";
 import Cam from "../interfaces/Cam";
 import HangInTherePhoto from "../img/hanginthere.jpg";
 
-import { Card } from '@mui/material';
+import { Card, Typography } from '@mui/material';
 
 interface VideoPlayerProps {
     cam: Cam;
@@ -31,32 +31,31 @@ const VideoPlayerContainer: React.FC<VideoPlayerProps> = ({ cam }) => {
 
     const defaultStyle: React.CSSProperties = {
         width: windowWidth,
-        height: calculatedHeight,
+        height: calculatedHeight + bottomBarHeight - 20,
     };
 
     return (
-        <Card
-            elevation={0}
-         className='video-card'>
+        <div className='video-card' style={defaultStyle}>
                 {
                     cam.comingSoon ?
-                        <div className='coming-soon' style={{ ...defaultStyle, marginBottom: 116 }}>
+                        <div className='coming-soon' style={{ marginBottom: 116 }}>
                             <p>Coming soon</p>
-                            <img src={HangInTherePhoto} alt="Hang in there" style={{ height: calculatedHeight + 20, objectFit: "fill" }} />
+                            <img 
+                            src={HangInTherePhoto} 
+                            alt="Hang in there" 
+                            style={{ height: calculatedHeight, objectFit: "fill" }} />
                         </div> : 
-                        <div>
-                        <VideoPlayer style={{ ...defaultStyle }} src={cam.src} />
-                        <div className="host-section">
-                            <div style={{ marginLeft: 10 }}>
-                                <h4>Hosted By</h4>
-                            </div>
-                            <a className='host-tag' href={cam.hostWebsite}>
-                                <img alt="host logo" style={{ height: (bottomBarHeight - 10) + "px" }} src={cam.hostLogo} />
-                            </a>
-                        </div>
-                        </div>
+                            <VideoPlayer style={{height: calculatedHeight,width: windowWidth}} src={cam.src} />
                 }
-        </Card>
+                <div className="host-section">
+                    <div style={{ marginLeft: 10 }}>
+                        <Typography variant='h5'>Hosted By</Typography>
+                    </div>
+                    <a className='host-tag' href={cam.hostWebsite}>
+                        <img alt="host logo" style={{ height: (bottomBarHeight - 40) + "px" }} src={cam.hostLogo} />
+                    </a>
+                </div>
+        </div>
     );
 };
 

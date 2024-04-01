@@ -1,6 +1,10 @@
 .video-card {
-    margin-bottom: 60px;
+    border-radius: 5px;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    overflow: hidden;
 
     .prevideo-window {
         color: white;
@@ -25,18 +29,24 @@
         height: 100%;
     }
 
-    .host-section {
-        padding: 20px;
+}
+
+.host-section {
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    h4 {
+        margin: 0;
+    }
+
+    .host-tag {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-
-        .host-tag {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-        }
     }
 }

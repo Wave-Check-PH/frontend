@@ -21,14 +21,14 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({ locations, setCamIndex,
     const [emblaRef] = useEmblaCarousel();
 
     const onCamClick = (index: number) => {
+        console.log("run");
         setDrawerOpen(true);
         setCamIndex(index.toString());
-        const element = document.getElementById('surf-cam-player');
+        const element = document.getElementById('surf-cam-player-anchor');
+        console.log(element);
         element?.scrollIntoView({
             behavior: 'smooth',
-            // block: "start",
             block:"start",
-            inline: "center"
         }); 
     };
 

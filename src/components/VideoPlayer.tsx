@@ -1,9 +1,10 @@
 import React, { useRef, useEffect } from 'react';
 import Hls from 'hls.js';
+import "./VideoPlayer.scss";
 
 interface VideoPlayerProps {
   src: string;
-  style: React.CSSProperties;
+  style?: React.CSSProperties;
 }
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, style }) => {
@@ -50,6 +51,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, style }) => {
       autoPlay={true}
       ref={videoRef}
       controls
+      className='video-player'
       style={{
         ...style,
         width: '100%',

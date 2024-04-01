@@ -8,7 +8,7 @@ import { Container } from "reactstrap";
 function DarkFooter() {
   return (
     <footer>
-      <div style={{ marginTop: "10vh", width: "100%", display: 'flex', justifyContent: "start", flexDirection: 'row' }}>
+      <div style={{ marginTop: "80vh", width: "100%", display: 'flex', justifyContent: "start", flexDirection: 'row' }}>
         <img style={{ height: "80px" }} src={BagongPilipinasLogo} alt="Bagong Pilipinas" />
       </div>
     </footer>

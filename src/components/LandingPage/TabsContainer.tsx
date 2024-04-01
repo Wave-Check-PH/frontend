@@ -48,7 +48,7 @@ const TabsContainerPlayer: React.FC<TabsContainerPlayerProps> = ({ locations }) 
             setDrawerOpen={setDrawerOpen}
             locations={locations} surftownIndex={surftownIndex} setCamIndex={setCamIndex} />
         </Card>
-        <div className='surf-cam-player-id-container' id="surf-cam-player">{' '}</div>
+        <div className='surf-cam-player-id-container' id="surf-cam-player-anchor"/>
         <FadeIn
         open={drawerOpen} 
         children={<VideoPlayerContainer cam={currentSurfTown.cams[parseInt(camIndex)]} />} />
