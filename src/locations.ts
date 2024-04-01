@@ -6,7 +6,7 @@ const locations: SurfTown[] = [{
     cams: [
         {
             name: "Point",
-            src: "https:/wavecheckapi.com/memfs/75bb22e6-9861-4bc9-8978-f84a75bcc51c.m3u8",
+            src: "https://wavecheckapi.com/memfs/75bb22e6-9861-4bc9-8978-f84a75bcc51c.m3u8",
             hostLogo: SurfMaidLogo,
             image: "https:/wavecheckapi.com/memfs/75bb22e6-9861-4bc9-8978-f84a75bcc51c.jpg",
             hostWebsite: "https://surfmaid.wixsite.com/surfmaid"
