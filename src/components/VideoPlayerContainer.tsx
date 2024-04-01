@@ -36,7 +36,9 @@ const VideoPlayerContainer: React.FC<VideoPlayerProps> = ({ cam }) => {
     };
 
     return (
-        <Card className='video-card'>
+        <Card
+            elevation={0}
+         className='video-card'>
                 {
                     cam.comingSoon ?
                         <div className='coming-soon' style={{ ...defaultStyle, marginBottom: 116 }}>

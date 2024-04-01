@@ -3,7 +3,7 @@ import "./LandingContent.scss";
 import locations from "../../locations";
 import Text from "@mui/material/Typography";
 
-import TabsContainerPlayer from "../TabsContainer";
+import TabsContainerPlayer from "./TabsContainer";
 
 
 function LandingContent() {

@@ -37,7 +37,10 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, style }) => {
 
     if (error) {
         console.error(error);
-        return <div style={{ ...style, alignContent: "center", display: 'flex', flexDirection: 'row', justifyContent: "center" }}><p>Failed to load video</p></div>;
+        return <div 
+        style={{ ...style, alignContent: "center", display: 'flex', flexDirection: 'row', justifyContent: "center" }}>
+            <p>Failed to load video</p>
+            </div>;
     }
 
     return (

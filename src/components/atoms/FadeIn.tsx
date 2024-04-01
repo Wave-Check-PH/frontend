@@ -2,19 +2,16 @@ import React from 'react';
 import './FadeIn.scss';
 
 interface FadeInProps {
-    child: React.ReactNode;
+    children: React.ReactNode;
     open: boolean;
 }
 
-const FadeIn: React.FC<FadeInProps> = ({ child, open }) => {
-
-    return <>
-    <div style={{ marginBottom: "50px"}}>{' '}</div>
-        <div className={`collapse ${open ? 'show' : ''}`}>
-            {child}
+const AnimatedComponent: React.FC<FadeInProps> = ({ children, open }) => {
+    return (
+        <div className={`expanding-component ${open ? 'expanded' : ''}`}>
+            {children}
         </div>
-        </>;
-        
+    );
 };
 
-export default FadeIn;
+export default AnimatedComponent;

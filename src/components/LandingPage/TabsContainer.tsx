@@ -4,10 +4,10 @@ import "./TabsContainer.scss";
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import AppBar from '@mui/material/AppBar';
-import SurfTown from '../interfaces/SurfTown';
-import VideoPlayerContainer from './VideoPlayerContainer';
-import CustomCarousel from "./LandingPage/Carousel";
-import FadeIn from './atoms/FadeIn';
+import SurfTown from '../../interfaces/SurfTown';
+import VideoPlayerContainer from '../VideoPlayerContainer';
+import CustomCarousel from "./Carousel";
+import FadeIn from '../atoms/FadeIn';
 
 interface TabsContainerPlayerProps {
     locations: SurfTown[];
@@ -42,8 +42,10 @@ const TabsContainerPlayer: React.FC<TabsContainerPlayerProps> = ({ locations }) 
         <CustomCarousel
             setDrawerOpen={setDrawerOpen}
             locations={locations} surftownIndex={surftownIndex} setCamIndex={setCamIndex} />
-        <FadeIn open={drawerOpen} child={<VideoPlayerContainer cam={currentSurfTown.cams[parseInt(camIndex)]} />} />
-
+        <div id="surf-cam-player" style={{ marginBottom: "100px" }}>{' '}</div>
+        <FadeIn
+        open={drawerOpen} 
+        children={<VideoPlayerContainer cam={currentSurfTown.cams[parseInt(camIndex)]} />} />
 
     </div>
 };
