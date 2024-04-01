@@ -204,6 +204,8 @@
         top: 0;
         left: 0;
         background-size: cover;
+        -webkit-background-size: cover;
+        -webkit-background-position: center center;
         background-position: center center;
 
     }
