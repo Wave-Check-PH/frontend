@@ -25,13 +25,13 @@ function App() {
   return (
     <ThemeProvider theme={customTheme}>
       <NavBarMain />
-      <div className="navbar-spacer">
       <Routes>
+      <div className="navbar-spacer">
         <Route path="/" element={<LandingSection />} />
         <Route path="/history" element={<HistoryPage />} />
         <Route path="/about" element={<AboutPage />} />
-      </Routes>
       </div>    
+      </Routes>
 
       <DarkFooter />
     </ThemeProvider>
