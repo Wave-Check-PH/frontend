@@ -28,7 +28,7 @@ function IndexHeader() {
 
   return (
     <>
-      <div style={{paddingTop: '55px'}} className="page-header clear-filter" filter-color="blue">
+      <div  className="page-header clear-filter" filter-color="blue">
         <div
           className="page-header-image"
           style={{
