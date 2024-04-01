@@ -25,7 +25,8 @@ function App() {
   return (
     <ThemeProvider theme={customTheme}>
       <NavBarMain />
-      <div className="navbar-spacer" />
+      <div className="navbar-spacer">{' '}
+      </div>      
       <Routes>
         <Route path="/" element={<LandingSection />} />
         <Route path="/history" element={<HistoryPage />} />
