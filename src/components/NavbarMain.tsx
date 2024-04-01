@@ -49,7 +49,7 @@ export default function DrawerAppBar(props: Props) {
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
             <Typography variant="h6" sx={{ my: 2 }}>
-                Wave Check PH
+                Testing
             </Typography>
             <Divider />
             <List>
