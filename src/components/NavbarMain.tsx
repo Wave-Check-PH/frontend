@@ -85,7 +85,7 @@ export default function DrawerAppBar(props: Props) {
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                     >
-                        <span>Wave Check PH 🇵🇭</span>
+                        <span>Testing</span>
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
