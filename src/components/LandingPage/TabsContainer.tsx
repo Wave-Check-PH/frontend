@@ -38,7 +38,7 @@ const TabsContainerPlayer: React.FC<TabsContainerPlayerProps> = ({ locations }) 
                 aria-label="full width tabs example"
             >
                 {locations.map((cam, index) => {
-                    return <Tab label={cam.name} value={index.toString()} />
+                    return <Tab key={cam.name + index} label={cam.name} value={index.toString()} />
                 })}
             </Tabs>
         </AppBar>

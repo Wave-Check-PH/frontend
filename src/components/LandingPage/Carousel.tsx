@@ -67,7 +67,7 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({ locations, setCamIndex,
             <div className="embla" ref={emblaRef}>
                 <div className="embla__container">
                     {items.map((item) => (
-                        <div className="embla__slide">{item}</div>
+                        <div key={item.key} className="embla__slide">{item}</div>
                     ))}
                 </div>
             </div>
