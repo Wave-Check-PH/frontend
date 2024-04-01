@@ -4,7 +4,7 @@ should be called before "trackPageView" */
 _paq.push(['trackPageView'])
 _paq.push(['enableLinkTracking']);
 (function () {
-  const u = '//34.126.106.11:7000/'
+  const u = 'https://wavecheck.ph:7000/'
   _paq.push(['setTrackerUrl', u + 'matomo.php'])
   _paq.push(['setSiteId', '1'])
   const d = document; 
