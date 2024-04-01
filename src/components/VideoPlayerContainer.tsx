@@ -26,8 +26,7 @@ const VideoPlayerContainer: React.FC<VideoPlayerProps> = ({ cam }) => {
         return () => {
             window.removeEventListener('resize', handleResize); // Clean up event listener on unmount
         };
-    }, [isDesktop]); // Include isDesktop in dependency array
-
+    }, [isDesktop]); 
     const calculatedHeight = windowWidth * 0.5625;
 
     const defaultStyle: React.CSSProperties = {
