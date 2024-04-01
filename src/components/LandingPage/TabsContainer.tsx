@@ -8,7 +8,7 @@ import SurfTown from '../../interfaces/SurfTown';
 import VideoPlayerContainer from '../VideoPlayerContainer';
 import CustomCarousel from "./Carousel";
 import FadeIn from '../atoms/FadeIn';
-import { Card, useTheme } from '@mui/material';
+import { Card } from '@mui/material';
 
 interface TabsContainerPlayerProps {
     locations: SurfTown[];
@@ -18,8 +18,6 @@ const TabsContainerPlayer: React.FC<TabsContainerPlayerProps> = ({ locations }) 
     const [surftownIndex, setSurftownIndex] = React.useState(0);
     const [camIndex, setCamIndex] = React.useState("0");
     const [drawerOpen, setDrawerOpen] = React.useState(false);
-
-    const theme = useTheme();
 
     const handleChange = (event: React.SyntheticEvent, newValue: string) => {
         setSurftownIndex(parseInt(newValue));

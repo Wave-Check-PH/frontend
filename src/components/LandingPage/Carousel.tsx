@@ -1,16 +1,12 @@
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
 
 import 'swiper/css/free-mode';
 import "./Carousel.scss"
 import SurfTown from '../../interfaces/SurfTown';
-import { useEffect, useState } from 'react';
 import React from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import { Button } from '@mui/material';
+import ComingSoonPhoto from '../../img/coming-soon.jpg';
 interface CustomCarouselProps {
     locations: SurfTown[];
     setCamIndex: (index: string) => void;
@@ -34,9 +30,11 @@ const CustomCarousel: React.FC<CustomCarouselProps> = ({ locations, setCamIndex,
 
     const items = locations[surftownIndex].cams.map((cam, index) => (
         <Button
+
             variant='text'
             key={index}
-            style={{ width: "256px", backgroundImage: `url(${cam.image})` }}
+            style={{
+            backgroundSize: cam.comingSoon ? "cover" : "cover", width: "256px", backgroundImage: `url(${cam.comingSoon ? ComingSoonPhoto : cam.image})` }}
             className="carousel-item"
             onClick={() => onCamClick(index)}
         >

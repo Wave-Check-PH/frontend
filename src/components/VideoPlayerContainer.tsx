@@ -4,7 +4,7 @@ import "./VideoPlayerContainer.scss";
 import Cam from "../interfaces/Cam";
 import HangInTherePhoto from "../img/hanginthere.jpg";
 
-import { Card, Typography } from '@mui/material';
+import {  Typography } from '@mui/material';
 
 interface VideoPlayerProps {
     cam: Cam;
@@ -18,7 +18,7 @@ const VideoPlayerContainer: React.FC<VideoPlayerProps> = ({ cam }) => {
     useEffect(() => {
         const handleResize = () => {
             setIsDesktop(window.innerWidth > 1024);
-            setWindowWidth(window.innerWidth * (isDesktop ? 0.6 : 0.9)); // Update width on resize
+            setWindowWidth(window.innerWidth * (isDesktop ? 0.6 : 0.95)); // Update width on resize
         };
 
         window.addEventListener('resize', handleResize); // Listen for resize event

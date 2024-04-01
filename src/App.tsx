@@ -18,7 +18,6 @@ function App() {
   return (
     <ThemeProvider theme={customTheme}>
       <NavBarMain />
-      <div className='navbar-spacer' />
       <Routes>
         <Route path="/" element={<LandingSection />} />
         <Route path="/history" element={<HistoryPage />} />

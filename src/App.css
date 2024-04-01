@@ -43,3 +43,7 @@
 .navbar-spacer {
   margin-top: 64px;
 }
+
+.body {
+  overscroll-behavior: none;
+}

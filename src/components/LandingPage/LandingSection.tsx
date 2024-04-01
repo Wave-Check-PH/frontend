@@ -29,7 +29,7 @@ function LandingSection() {
     });
     return (
         <>
-            <div className="wrapper">
+            <div style={{  overscrollBehaviorBlock: "contain"}} className="wrapper">
                 <IndexHeader />
                 <div style={{ backgroundColor: theme.palette.background.default }} className="main">
                     <LandingContent />
