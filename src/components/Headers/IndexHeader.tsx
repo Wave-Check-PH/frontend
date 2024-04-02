@@ -53,7 +53,7 @@ function IndexHeader() {
     <h1 className="h1-seo">Wave Check PH</h1>
     <h3>Discover the Philippines unlimited waves</h3>
   </div>
-  <strong className="category" style={{ marginTop: '45vh' }}>
+  <strong className="category" style={{ marginTop: '55vh' }}>
     Powered by{" "}
     <img src={GlobeLogo} alt="Globe Telecom Logo" width="100" />
   </strong>
@@ -64,7 +64,7 @@ function IndexHeader() {
       // position: 'absolute',
       bottom: '20px',
       left: '50%',
-      marginTop: "50px",
+      marginTop: "40px",
       transform: 'translateX(-50%)',
     }}
   />
