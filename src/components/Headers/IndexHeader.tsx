@@ -4,7 +4,6 @@ import { Container } from "reactstrap";
 import headerImage from "../../img/cloud9.jpg";
 import logoImg from "../../assets/img/now-logo.png";
 import GlobeLogo from "../../img/globe.png";
-import { Icon } from "@mui/material";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 function IndexHeader() {
@@ -32,7 +31,8 @@ function IndexHeader() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: `url(${headerImage})`
+            backgroundImage: `url(${headerImage})`,
+            
           }}
           ref={pageHeader}
         >
@@ -52,21 +52,22 @@ function IndexHeader() {
     {/* <img alt="..." className="n-logo" src={logoImg}></img> */}
     <h1 className="h1-seo">Wave Check PH</h1>
     <h3>Discover the Philippines unlimited waves</h3>
+    <KeyboardArrowDownIcon
+    style={{
+      fontSize: '3rem',
+      color: 'white',
+      // position: 'absolute',
+      bottom: '20px',
+      left: '50%',
+      // marginTop: "20px",
+      transform: 'translateX(-50%)',
+    }}
+  />
   </div>
   <strong className="category" style={{ marginTop: '45vh' }}>
     Powered by{" "}
     <img src={GlobeLogo} alt="Globe Telecom Logo" width="100" />
   </strong>
-  <KeyboardArrowDownIcon
-    style={{
-      fontSize: '3rem',
-      color: 'white',
-      position: 'absolute',
-      bottom: '20px',
-      left: '50%',
-      transform: 'translateX(-50%)',
-    }}
-  />
 </div>
       </div>
     </>

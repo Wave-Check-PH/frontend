@@ -10,7 +10,7 @@ function LandingContent() {
     return (
 
         <div className="landing-content">
-            <Text className="surf-cams-text" variant="h2">Surf Cam's</Text>
+            <Text className="surf-cams-text" variant="h2">Surf Cam</Text>
             <TabsContainerPlayer locations={locations} />
         </div>
     );
