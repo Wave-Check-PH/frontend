@@ -1,6 +1,3 @@
-import 'swiper/css';
-
-import 'swiper/css/free-mode';
 import "./Carousel.scss"
 import SurfTown from '../../interfaces/SurfTown';
 import React from 'react'

@@ -1,5 +1,5 @@
 import React from 'react';
-import './HistoryPage.scss';
+import './History.scss';
 
 const HistoryPage = () => {
     return (

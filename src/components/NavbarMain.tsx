@@ -12,12 +12,14 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import { Button } from '@mui/material';
 import NavItem from '../interfaces/NavItem';
 import { useNavigate } from 'react-router-dom';
+import { signOut,getAuth } from "firebase/auth";
 
 interface Props {
     window?: () => Window;
+    loggedIn?: boolean;
 }
 
 const drawerWidth = 240;
@@ -35,9 +37,10 @@ const navItems: NavItem[] = [{
 
 
 export default function DrawerAppBar(props: Props) {
-    const { window } = props;
+    const { window,loggedIn } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const navigate = useNavigate();
+const auth = getAuth();
 
 
     const handleOnLinkClick = (link: string) => navigate(link);
@@ -61,6 +64,15 @@ export default function DrawerAppBar(props: Props) {
                     </ListItem>
                 ))}
             </List>
+            {loggedIn ? (
+          <Button onClick={() => signOut(auth)}>
+            Sign Out
+          </Button>
+        ) : (
+          <Button >
+            Sign In
+          </Button>
+        )}
         </Box>
     );
 
@@ -94,6 +106,15 @@ export default function DrawerAppBar(props: Props) {
                             </Button>
                         ))}
                     </Box>
+                                        {loggedIn ? (
+                    <Button sx={{ color: '#fff' }} onClick={() => signOut(auth)}>
+                        Sign Out
+                    </Button>
+                ) : (
+                    <Button sx={{ color: '#fff' }} onClick={() => { navigate('/login') }}>
+                        Sign In
+                    </Button>
+                )}
                 </Toolbar>
             </AppBar>
             <nav>
