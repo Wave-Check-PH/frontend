@@ -1,8 +1,9 @@
-import React, { useState, useRef } from 'react';
-import { Button, Grid, Typography, TextField } from '@material-ui/core';
+import React, { useState } from 'react';
+import { Button, Typography, TextField, CircularProgress } from '@mui/material';
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-
+import "./Login.scss";import { useLocation, useNavigate } from 'react-router-dom';
+;
 interface FormValues {
   email: string;
   password: string;
@@ -12,6 +13,9 @@ const LoginPage: React.FC = () => {
   const auth = getAuth();
   const [isSignUp, setIsSignUp] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
+  const location = useLocation();
+  const entryLinkBeforeLogin = location.state?.from?.pathname || '/';
 
   const handleSubmit = async (
     values: FormValues,
@@ -23,9 +27,9 @@ const LoginPage: React.FC = () => {
       } else {
         await signInWithEmailAndPassword(auth, values.email, values.password);
       }
-      // Redirect to the desired page after successful login or signup
+       navigate(entryLinkBeforeLogin, { replace: true });
     } catch (error) {
-      let errorMessage = 'An unknown error occurred.';
+      let errorMessage = 'Wrong login credentials. Please try again.';
       console.log(error);
       if (error instanceof Error) {
         switch (error.message) {
@@ -39,20 +43,16 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <Grid container justify="center">
-      <Grid item xs={12} sm={6}>
-        <Typography variant="h4" align="center" gutterBottom>
-          {isSignUp ? 'Create Account' : 'Login'}
-        </Typography>
-        {errorMessage && (
-          <Typography variant="body1" color="error" align="center" gutterBottom>
-            {errorMessage}
-          </Typography>
-        )}
+    <div className='login-create-account-container'>
         <Formik
           initialValues={{ email: '', password: '' }}
           validate={(values: FormValues) => {
             const errors: Partial<FormValues> = {};
+            if (!values.password) {
+              errors.password = 'Required';
+            } else if (values.password.length < 8) {
+              errors.password = 'Password must be at least 8 characters long';
+            }
             if (!values.email) {
               errors.email = 'Required';
             } else if (
@@ -64,8 +64,18 @@ const LoginPage: React.FC = () => {
           }}
           onSubmit={handleSubmit}
         >
-          {({ isSubmitting }) => (
-            <Form>
+          
+          {({ isSubmitting }) => !isSubmitting ? (
+            <>
+            <Typography variant="h4" align="center" gutterBottom>
+          {isSignUp ? 'Create Account' : 'Login'}
+        </Typography>
+        {errorMessage && (
+          <Typography variant="body1" color="error" align="center" gutterBottom>
+            {errorMessage}
+          </Typography>
+        )}
+            <Form className='login-form'>
               <Field
                 type="email"
                 name="email"
@@ -75,6 +85,7 @@ const LoginPage: React.FC = () => {
                 margin="normal"
               />
               <ErrorMessage name="email" component="div" />
+
               <Field
                 type="password"
                 name="password"
@@ -84,6 +95,8 @@ const LoginPage: React.FC = () => {
                 margin="normal"
               />
               <ErrorMessage name="password" component="div" />
+              <br/>
+
               <Button
                 type="submit"
                 variant="contained"
@@ -101,11 +114,10 @@ const LoginPage: React.FC = () => {
               >
                 {isSignUp ? 'Already have an account? Login' : "Don't have an account? Sign Up"}
               </Button>
-            </Form>
-          )}
+            </Form></>
+          ) : <CircularProgress />}
         </Formik>
-      </Grid>
-    </Grid>
+    </div>
   );
 };
 

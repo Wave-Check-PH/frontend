@@ -33,6 +33,9 @@ const navItems: NavItem[] = [{
 }, {
     text: 'About',
     path: '/about'
+},{
+    text: 'Instructor',
+    path: '/instructor'
 }];
 
 

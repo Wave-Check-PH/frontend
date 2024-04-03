@@ -3,12 +3,12 @@ import LandingSection from './components/LandingPage/LandingSection';
 import DarkFooter from "./components/Footers/DarkFooter";
 import NavBarMain from "./components/NavbarMain";
 import './App.css';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import HistoryPage from './pages/History';
+import InstructorPage from './pages/Instructor';
 import AboutPage from './pages/About';
 import customTheme from './theme';
 import { ThemeProvider } from '@mui/material/styles';
-import { useLocation } from 'react-router-dom';
 import { initializeApp } from 'firebase/app';
 import LoginPage from './pages/Login';
 import { getAuth } from "firebase/auth";
@@ -29,7 +29,13 @@ function App() {
     const auth = getAuth();
   const [loggedIn] = useAuthState(auth);
   const PrivateComponent = ({ element }: { element: ReactNode }) => {
-  return loggedIn ? <>{element}</> : <Navigate to="/login" />;
+  const location = useLocation();
+
+  return loggedIn ? (
+    <>{element}</>
+  ) : (
+    <Navigate to="/login" state={{ from: location }} replace />
+  );
 };
 
   return (
@@ -39,9 +45,9 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingSection />} />
           <Route path="/login" element={<LoginPage />} />
-          
-          <Route path="/history" element={<PrivateComponent element={<HistoryPage/>}/>} />
+          <Route path="/history" element={<HistoryPage/>} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/instructor" element={<PrivateComponent element={<InstructorPage/>}/>} />
         </Routes>
       </div>
       <DarkFooter />
