@@ -1,7 +1,7 @@
 /*eslint-disable*/
 import React, { useRef, useEffect } from "react";
 import { Container } from "reactstrap";
-import headerImage from "../../img/cloud9.jpg";
+import headerImage from "../../img/toby.jpeg";
 import logoImg from "../../assets/img/now-logo.png";
 import GlobeLogo from "../../img/globe.png";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';

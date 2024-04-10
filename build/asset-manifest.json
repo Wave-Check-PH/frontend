@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.01ebbb32.css",
-    "main.js": "/static/js/main.117aad56.js",
+    "main.css": "/static/css/main.3c501048.css",
+    "main.js": "/static/js/main.1e7b7257.js",
     "static/js/453.a2c29819.chunk.js": "/static/js/453.a2c29819.chunk.js",
     "static/media/bagongPilipinas.png": "/static/media/bagongPilipinas.cab0d2d3a722f943da28.png",
     "static/media/globe.png": "/static/media/globe.cd33ed091990e0688840.png",
     "static/media/surfmaidlogo.png": "/static/media/surfmaidlogo.6455b4f96f89ba64258a.png",
-    "static/media/cloud9.jpg": "/static/media/cloud9.6af7026ebafaf9a2a881.jpg",
+    "static/media/toby.jpeg": "/static/media/toby.ca5be1b85cb8db98c9d5.jpeg",
     "static/media/hanginthere.jpg": "/static/media/hanginthere.d996eca4bb1c64ef9003.jpg",
     "static/media/nucleo-outline.eot": "/static/media/nucleo-outline.56814a6b7240045e1494.eot",
     "static/media/nucleo-outline.ttf": "/static/media/nucleo-outline.1102ed9b2d16dccdec05.ttf",
     "static/media/nucleo-outline.woff": "/static/media/nucleo-outline.1a1036e643f97457ec5f.woff",
     "static/media/nucleo-outline.woff2": "/static/media/nucleo-outline.802141dd0dcc63b21cbb.woff2",
     "index.html": "/index.html",
-    "main.01ebbb32.css.map": "/static/css/main.01ebbb32.css.map",
-    "main.117aad56.js.map": "/static/js/main.117aad56.js.map",
+    "main.3c501048.css.map": "/static/css/main.3c501048.css.map",
+    "main.1e7b7257.js.map": "/static/js/main.1e7b7257.js.map",
     "453.a2c29819.chunk.js.map": "/static/js/453.a2c29819.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.01ebbb32.css",
-    "static/js/main.117aad56.js"
+    "static/css/main.3c501048.css",
+    "static/js/main.1e7b7257.js"
   ]
 }
