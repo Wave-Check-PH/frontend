@@ -67,7 +67,7 @@ const auth = getAuth();
                     </ListItem>
                 ))}
             </List>
-            {loggedIn ? (
+            {/* {loggedIn ? (
           <Button onClick={() => signOut(auth)}>
             Sign Out
           </Button>
@@ -75,7 +75,7 @@ const auth = getAuth();
           <Button >
             Sign In
           </Button>
-        )}
+        )} */}
         </Box>
     );
 
@@ -109,7 +109,7 @@ const auth = getAuth();
                             </Button>
                         ))}
                     </Box>
-                                        {loggedIn ? (
+                                        {/* {loggedIn ? (
                     <Button sx={{ color: '#fff' }} onClick={() => signOut(auth)}>
                         Sign Out
                     </Button>
@@ -117,7 +117,7 @@ const auth = getAuth();
                     <Button sx={{ color: '#fff' }} onClick={() => { navigate('/login') }}>
                         Sign In
                     </Button>
-                )}
+                )} */}
                 </Toolbar>
             </AppBar>
             <nav>

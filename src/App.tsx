@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect } from 'react';
+import React, { ReactNode } from 'react';
 import LandingSection from './components/LandingPage/LandingSection';
 import DarkFooter from "./components/Footers/DarkFooter";
 import NavBarMain from "./components/NavbarMain";
