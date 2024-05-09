@@ -7,7 +7,7 @@ function InProgress() {
 
         <div className="container">
             <div className="footnote">
-                <Typography>This is a super early prototype, just so people can use the Point cam.
+                <Typography style={{color: 'grey'}} className='typography'>This is a super early prototype, just so people can use the Point cam.
                     Please be patient, we're still building this thing
                 If you have any spots that you want added to this site or just have any questions, please email
                 If you want to add any spots, help with the design of the website or have any questions, please email below

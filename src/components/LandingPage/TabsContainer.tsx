@@ -8,7 +8,7 @@ import SurfTown from '../../interfaces/SurfTown';
 import VideoPlayerContainer from '../VideoPlayerContainer';
 import CustomCarousel from "./Carousel";
 import FadeIn from '../atoms/FadeIn';
-import { Card } from '@mui/material';
+import { Card, Typography } from '@mui/material';
 
 interface TabsContainerPlayerProps {
     locations: SurfTown[];
@@ -50,6 +50,7 @@ const TabsContainerPlayer: React.FC<TabsContainerPlayerProps> = ({ locations }) 
         <FadeIn
         open={drawerOpen} 
         children={<VideoPlayerContainer cam={currentSurfTown.cams[parseInt(camIndex)]} />} />
+        {drawerOpen && <Typography variant='body1' className='description'>{currentSurfTown.cams[parseInt(camIndex)].description}<br/></Typography>}
 
     </div>
 };
